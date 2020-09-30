@@ -23,7 +23,7 @@ def download(url):
     base = os.path.splitext(out_file)
     new_file = base[0] + '.mp3'
     os.rename(out_file, new_file)
-    print(green+"LOG> video downloaded"+reset)
+    print("LOG> video downloaded")
 
 def oneSong(nome):
     base="https://www.youtube.com/"
@@ -32,16 +32,11 @@ def oneSong(nome):
     try:
         download(base+watch+scrap(base+search+nome.replace(" ","+")))
     except:
-        print(bold_red+"ERROR CONTACT ME... www.mastella.eu"+reset)
+        print("ERROR CONTACT ME... www.mastella.eu")
 
 if __name__== "__main__":
-    yellow = "\x1b[33;21m"
-    green ="\x1b[1;32;21m"
-    azure = "\x1b[1;36;21m"
-    bold_red = "\x1b[31;1m"
-    reset = "\x1b[0m"
-    print(chr(27) + "[2J"+azure+"TYPE "+reset+yellow+"exit"+azure+" TO QUIT THE PROGRAM"+reset)
-    pick=input(azure+"TITLE:\t"+reset)
+    print("TYPE exit TO QUIT THE PROGRAM")
+    pick=input("TITLE:\t")
     while pick!="exit":
         oneSong(pick)
-        pick=input(azure+"TITLE:\t"+reset)
+        pick=input("TITLE:\t")
