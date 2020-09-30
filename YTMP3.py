@@ -38,11 +38,23 @@ def oneSong(nome):
     try:
         download(base+watch+scrap(base+search+nome.replace(" ","+")))
     except:
-        print("ERROR CONTACT ME... www.mastella.eu")
+        print("ERROR CONTACT ME... simone@mastella.eu")
 
 if __name__== "__main__":
+    print("""__   __________  _________ _____ 
+\ \ / /_   _|  \/  || ___ \____ |
+ \ V /  | | | .  . || |_/ /   / /
+  \ /   | | | |\/| ||  __/    \ \\
+  | |   | | | |  | || |   .___/ /
+  \_/   \_/ \_|  |_/\_|   \____/
+This Software is under MIT LICENSE
+Developed by Simone Mastella
+Visit www.mastella.eu
+""")
     print("TYPE exit TO QUIT THE PROGRAM")
     pick=input("TITLE:\t")
     while pick!="exit":
         oneSong(pick)
         pick=input("TITLE:\t")
+
+                      
