@@ -1,3 +1,2 @@
-#output directory
-DOWNLOADS/*.mp3
+.mp3
 *.pyc
