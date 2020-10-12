@@ -102,23 +102,25 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def download_event(self):
+        self.downloadButton.setEnabled(False)
+        self.exitButton.setEnabled(False)
+        self.songEdit.setEnabled(False)
+        self.progressBar.setValue(0)
         songList=self.songEdit.toPlainText().splitlines()
         if "" in songList:
             songList.remove("")
         for i, song in enumerate(songList):
             oneSong(song)
             self.progressBar.setValue(int((i+1)*100/len(songList)))  
-
-    def download_clicked(self):
-        self.downloadButton.setEnabled(False)
-        self.exitButton.setEnabled(False)
-        self.songEdit.setEnabled(False)
-        self.progressBar.setValue(0)
-        t = threading.Thread(target=self.download_event)
-        t.start()   
         self.downloadButton.setEnabled(True) 
         self.exitButton.setEnabled(True)
         self.songEdit.setEnabled(True)
+
+    def download_clicked(self):
+        
+        t = threading.Thread(target=self.download_event)
+        t.start()   
+        
 
     def exit_clicked(self):
         sys.exit()
